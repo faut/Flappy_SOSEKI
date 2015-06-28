@@ -25,15 +25,13 @@ window.onload = function() {
 	});
 
 	var game = new Game(450, 800);
-	game.fps = 24;
 
-// GLOUBAL CONSISTENT
-var GA = 0.05;	// gravity acceralation
-var BG_SPEED = 3;	// background move speed
-var S_X 
-
-// GLOUBAL VARIABLE
-// game state 
-var gs = 0;	// 0 start menu /1 playing /2 dying /3 gameover
-// timekeeper
-var roopNum = 0;
+core.fps = 15;
+core.onload = function() {
+    bear.on('enterframe', function() {
+        this.x += 10;
+        this.rotate(2); // 2度ずつ回転
+        this.scale(1.01, 1.01); // 縦横1.01倍ずつ拡大
+        if (this.x > 320) this.x = 0; // 画面からはみ出したらx座標を0に戻す
+    });
+};
