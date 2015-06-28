@@ -1,4 +1,4 @@
-function score() {
+function drawScore() {
     // スコアを表示するラベルを作成
     var scoreLabel = new Label("SCORE : 0");
     scoreLabel.font = "16px Tahoma";

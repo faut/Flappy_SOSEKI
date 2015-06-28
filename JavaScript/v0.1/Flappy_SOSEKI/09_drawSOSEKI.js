@@ -1,7 +1,5 @@
 function drawSOSEKI() {
-    // 自機表示
-    var SOSEKI = new Sprite(50, 25);
-    SOSEKI.image = game.assets['img/SOSEKI_100x100.png'];
+
 
     // 初期画像のフレーム位置の設定
     SOSEKI.frame = 1;        // 歩行アニメーションの制御用
