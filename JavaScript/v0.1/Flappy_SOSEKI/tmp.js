@@ -52,10 +52,10 @@ window.onload = function() {
                 stopBackground();
             }
             game.pushScene(BackgroundScene);
-            //return scene;
-        //};
+            return scene;
+        };
 
-/*
+
 
                 var TitleScene = function() {
 			mv = true;
@@ -180,8 +180,6 @@ window.onload = function() {
 		function resetVariable() {
 		}
 
-*/
-
 		function moveBackground() {
 			// 背景
 			SOSEKI.addEventListener('enterframe', function() {
@@ -209,8 +207,6 @@ window.onload = function() {
 			return ;
 		}
 
-/*
-
 		function setPipe() {
 		}
 
@@ -234,9 +230,8 @@ window.onload = function() {
 				}
 				count++;	// カウンタを進める
 	/*		});
-			game.addEventListener('enterframe', function() {*/
-
-/*
+			game.addEventListener('enterframe', function() {
+    */
                 SOSEKI.x = SOSEKI.x += Sx;
                 SOSEKI.y = Sy;
 			});
