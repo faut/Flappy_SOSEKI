@@ -51,8 +51,6 @@ window.onload = function() {
 			} else {
 				stopBackground();
 			}
-			game.pushScene(BackgroundScene);
-			return scene;
 		//};
 
 
@@ -84,7 +82,6 @@ window.onload = function() {
 			});
 
 			// タイトルシーンを返します。
-			return scene;
 		};
 		var PlayScene = function() {	// include playGame and dying
 			mv = true;
@@ -95,63 +92,58 @@ window.onload = function() {
 
 			moveSOSEKI();
 
-			var scene = new Scene();
+			var PlayScene = new Scene();
 			var PIPE = new Sprite(100, 750);
 			PIPE.image = game.assets['img/kuma_pipe_400_750.png'];
-			scene.addChild(PIPE);
-
-			return scene;
+			PlayScene.addChild(PIPE);
 		};
 		var OverScene = function() {
 			mv = false;
 			var timeCount = 0;
 			timeCount++;
-			var scene = new Scene();
+			var OverScene = new Scene();
 
 			var GAMEOVER = new Sprite(300, 300);
 			GAMEOVER.image = game.assets['img/gameover.png'];
 				GAMEOVER.x = 75;
 				GAMEOVER.y = 100;
-			scene.addChild(GAMEOVER);
+			OverScene.addChild(GAMEOVER);
 
 			var CLICK_C = new Sprite(400, 100);
 			CLICK_C.image = game.assets['img/clickC.png'];
 				CLICK_C.x = 25;
 				CLICK_C.y = 500;
-			scene.addChild(CLICK);
+			OverScene.addChild(CLICK);
 
 			var EXIT = new Sprite(125, 50);
 			EXIT.image = game.assets['img/exit.png'];
 				EXIT.x = 300;
 				EXIT.y = 705;
-			scene.addChild(EXIT);
+			OverScene.addChild(EXIT);
 			CLICK_C.addEventListener(Event.TOUCH_START, function(e) {
 				// 現在表示しているシーンをゲームシーンに置き換える
 				game.replaceScene(TitleScene());
 				mv = true;
 				timeCount = 0;
 			});
-			return scene;
 		};
 		var CharaScene = function() {
-			var scene = new Scene();
+			CharaScene = new Scene();
 			SOSEKI.image = game.assets['img/SOSEKI_100x100.png'];
 			var SOSEKI = new Sprite(50, 25);
 			SOSEKI.x = Sx;
 			SOSEKI.y = Sy;
-			scene.addChild(SOSEKI);
-			return scene;
+			CharaScene.addChild(SOSEKI);
 		};
 		var ScoreScene = function() {
+			var ScoreScene = new Scene();
 			// スコアを表示するラベルを作成
 			var scoreLabel = new Label("SCORE : 0");
 			scoreLabel.font = "16px Tahoma";
 			scoreLabel.color = "red";
 			scoreLabel.x = 10; // X座標
 			scoreLabel.y = 5; // Y座標
-			var scene = new Scene();
-		scene.addChild(SCORE);
-		return scene;
+			ScoreScene.addChild(SCORE);
 		};
 
 
@@ -204,7 +196,6 @@ window.onload = function() {
 			BACK2.addEventListener('enterframe', function() {
 				   BACK2.x = BACK2.x;
 			});
-			return ;
 		}
 
 		function setPipe() {
@@ -241,6 +232,7 @@ window.onload = function() {
 		}
 
 		function drawAll() {
+		game.pushScene(BackgroundScene);
 		}
 	}
 	game.start();
