@@ -182,7 +182,7 @@ window.onload = function() {
 
 		function moveBackground() {
 			// 背景
-			SOSEKI.addEventListener('enterframe', function() {
+			BackgroundScene.addEventListener('enterframe', function() {
 				// move BG
 				BACK1.x -= BS;
 				BACK2.x -= BS;
